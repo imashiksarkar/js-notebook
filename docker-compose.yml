@@ -1,0 +1,10 @@
+services:
+  jupyter-js:
+    image: liuderchi/jupyterlab-ijavascript
+    ports:
+      - '8888:8888'
+    volumes:
+      - ./:/home/node/notebooks
+    working_dir: /home/node/notebooks
+    restart: unless-stopped
+    command: jupyter lab --LabApp.token='' --LabApp.password='' --ip=0.0.0.0 --allow-root
