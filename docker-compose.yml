@@ -4,7 +4,7 @@ services:
     ports:
       - '8888:8888'
     volumes:
-      - ./:/home/node/notebooks
-    working_dir: /home/node/notebooks
+      - ./node_modules:/home/node/notebooks/node_modules
     restart: unless-stopped
+    working_dir: /home/node/notebooks
     command: jupyter lab --LabApp.token='' --LabApp.password='' --ip=0.0.0.0 --allow-root
